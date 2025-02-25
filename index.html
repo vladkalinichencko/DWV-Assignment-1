@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest-Grossing Films</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Highest-Grossing Films of All Time</h1>
+            <p>Data extracted from Wikipedia's List of Highest-Grossing Films</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for a film...">
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="yearFilter">Filter by Year:</label>
+                    <select id="yearFilter">
+                        <option value="all">All Years</option>
+                        <!-- Будет заполнено с помощью JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="sort-group">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy">
+                        <option value="box_office_desc">Box Office (High to Low)</option>
+                        <option value="box_office_asc">Box Office (Low to High)</option>
+                        <option value="year_desc">Year (Newest First)</option>
+                        <option value="year_asc">Year (Oldest First)</option>
+                        <option value="title_asc">Title (A-Z)</option>
+                        <option value="title_desc">Title (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <section class="films-container">
+            <div id="filmsGrid" class="films-grid">
+                <!-- Фильмы будут добавлены с помощью JavaScript -->
+                <div class="loading">Loading films data...</div>
+            </div>
+        </section>
+        
+        <section class="pagination">
+            <button id="prevPage" disabled>Previous</button>
+            <span id="currentPage">Page 1</span>
+            <button id="nextPage">Next</button>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Data Wrangling and Visualization Course Assignment by Vlad Otpad & Claude Sonnet 🥵 ❤️</p>
+            <p>Data sourced from <a href="https://en.wikipedia.org/wiki/List_of_highest-grossing_films" target="_blank">Wikipedia</a></p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

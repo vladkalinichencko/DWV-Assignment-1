@@ -1,0 +1,219 @@
+/* Base styles and resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #141414;
+    background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zM6 5v1H5z"/%3E%3C/g%3E%3C/svg%3E');
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff8a00, #ffd700, #ff0000);
+    animation: headerGlow 3s linear infinite;
+}
+
+@keyframes headerGlow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Controls section */
+.controls {
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+}
+
+.filter-group select, .sort-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #2a2a2a;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Films grid */
+.film-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    position: relative;
+    margin: 20px;
+}
+
+.film-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.2);
+}
+
+.film-card::before {
+    content: '🎬';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.film-info {
+    padding: 20px;
+}
+
+.film-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.3);
+    padding-bottom: 8px;
+}
+
+.film-box-office {
+    font-weight: 600;
+    color: #ff4444;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Pagination */
+.pagination {
+    margin: 40px 0;
+}
+
+.pagination button {
+    background: linear-gradient(45deg, #ff0000, #ff8a00);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.pagination button:disabled {
+    background: #333;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pagination span {
+    margin: 0 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 2px solid #333;
+}
+
+footer a {
+    color: #ff4444;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff8a00;
+    text-decoration: none;
+}
+
+/* Loading state */
+.loading {
+    color: #ff4444;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 40px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Error state */
+.error {
+    color: #ff4444;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid #ff4444;
+    border-radius: 8px;
+    margin: 20px 0;
+}
